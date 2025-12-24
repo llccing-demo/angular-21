@@ -1,0 +1,20 @@
+<div>
+
+    @if(isloading()) {
+        <p>Loading user...</p>
+    } @else if(hasError()) {
+        <p>Error loading user.</p>
+    } @else {
+        <h2>User Details</h2>
+        <p>Name: {{ userResource.value()?.name }}</p>
+        <p>Email: {{ userResource.value()?.email }}</p>
+    }
+</div>
+
+<div class="flex flex-col gap-2 items-start mt-4">
+    <button (click)="loadUser(1)">Load User 1</button>
+    <button (click)="loadUser(2)">Load User 2</button>
+    <button (click)="loadUser(3)">Load User 3</button>
+    <button (click)="loadUser(22)">Trigger an error</button>
+    <button (click)="reloadUser()">Reload User</button>
+</div>
