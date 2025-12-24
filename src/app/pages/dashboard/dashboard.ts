@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal, linkedSignal } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +8,12 @@ import { Component, signal } from '@angular/core';
 })
 export class Dashboard {
   userStatus = signal<'Offline' | 'Online'>('Offline');
+
+  notificationsEnabled = linkedSignal(() => this.userStatus() === 'Online');
+
+  statusMessage = computed(() => {
+    return this.userStatus() === 'Online' ? 'You are online' : 'You are offline';
+  });
 
   goOnline() {
     this.userStatus.set('Online');
@@ -19,5 +25,9 @@ export class Dashboard {
 
   toggleStatus() {
     this.userStatus.update((status) => (status === 'Online' ? 'Offline' : 'Online'));
+  }
+
+  toggleNotifications() {
+    this.notificationsEnabled.set(!this.notificationsEnabled());
   }
 }

@@ -2,8 +2,14 @@
 
 <p [class]="userStatus() === 'Online' ? 'bg-blue-200' : 'bg-gray-200'">User status: {{ userStatus() }}</p>
 
+<p class="mt-4">message: {{ statusMessage() }}</p>
 
-<div class="mt-4">
+<p>Notifications enabled: {{ notificationsEnabled() }}</p>
+
+<div class="mt-4 flex flex-col items-start gap-2">
     <button (click)="goOnline()">Go Online</button>
     <button (click)="goOffline()">Go Offline</button>
+
+    <button (click)="toggleStatus()">Toggle Status</button>
+    <button (click)="toggleNotifications()">Toggle Notifications></button>
 </div>
