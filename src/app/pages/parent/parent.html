@@ -1,0 +1,15 @@
+<p>Products </p>
+
+@for(product of products; track product.name) {
+    <div class="mb-2">
+        <span class="mr-2"> {{ product.name }}</span>
+        <button (click)="changeProduct(product)" class="mr-2 p-1 border-1">Select</button>
+    </div>
+}
+
+<div>
+    changeProductd Available:
+    <button (click)="changeAvailable()" class="ml-2 p-1 border-1">Toggle Available</button>
+</div>
+
+<app-child [name]="proudctName()" [price]="proudctPrice()" [available]="proudctAvailable()" />
