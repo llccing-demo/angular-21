@@ -1,37 +1,73 @@
-<div class="p-4">
-  <h1 appHightlight>Welcome to the Angular 21 App!</h1>
+<div [class]="themeClass()">
 
-  <ul class="flex gap-4">
-    <li>
-      <a routerLink="/" appHightlight color="green" [intensity]="0.2">Home</a>
-    </li>
+  <div class="p-4">
+    <h1 appHightlight>Welcome to the Angular 21 App!</h1>
 
-    <li>
-      <a routerLink="/dashboard" appHightlight color="green" [intensity]="0.2">Dashboard</a>
-    </li>
+    <ul class="flex gap-4">
+      <li>
+        <a routerLink="/" appHightlight color="green" [intensity]="0.2">Home</a>
+      </li>
 
-    <li>
-      <a routerLink="/users" appHightlight color="green" [intensity]="0.2">Users</a>
-    </li>
+      <li>
+        <a routerLink="/dashboard" appHightlight color="green" [intensity]="0.2">Dashboard</a>
+      </li>
 
-    <li>
-      <a routerLink="/parents" appHightlight color="green" [intensity]="0.2">Parents</a>
-    </li>
+      <li>
+        <a routerLink="/users" appHightlight color="green" [intensity]="0.2">Users</a>
+      </li>
 
-    <li>
-      <a routerLink="/checkbox" appHightlight color="green" [intensity]="0.2">Checkbox</a>
-    </li>
+      <li>
+        <a routerLink="/parents" appHightlight color="green" [intensity]="0.2">Parents</a>
+      </li>
 
-    <li>
-      <a routerLink="/cart" appHightlight color="green" [intensity]="0.2">Cart</a>
-    </li>
+      <li>
+        <a routerLink="/checkbox" appHightlight color="green" [intensity]="0.2">Checkbox</a>
+      </li>
 
-    <li>
-      <a routerLink="/query-elements" appHightlight color="green" [intensity]="0.2">Query Elements</a>
-    </li>
-  </ul>
-</div>
+      <li>
+        <a routerLink="/cart" appHightlight color="green" [intensity]="0.2">Cart</a>
+      </li>
 
-<div class="m-4 p-4 border-1">
-  <router-outlet />
+      <li>
+        <a routerLink="/query-elements" appHightlight color="green" [intensity]="0.2">Query Elements</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="m-4 p-4 border-1 flex gap-4">
+    <div>
+      <h2>Theme Manager with Effects</h2>
+
+      <div class="my-4 flex flex-col gap-2 items-start">
+        <button (click)="toggleTheme()">
+          Switch to
+          @if(theme() === 'light') {
+          Dark
+          } @else {
+          Light
+          }
+          theme
+        </button>
+
+        @if (isLoginIn()) {
+        <p>Welcome, {{ username() }}!</p>
+        <button (click)="logout()">Logout</button>
+        } @else {
+        <button (click)="login()">Login</button>
+        }
+      </div>
+
+
+      <div class="mt-8">
+        <p>Open the browser console to see the effects in action!</p>
+        <p>Effects will automatically:</p>
+        <ul>
+          <li>Save theme to localStorage</li>
+          <li>Log user activity changes</li>
+          <li>Run a timer every 5 seconds</li>
+        </ul>
+      </div>
+    </div>
+    <router-outlet />
+  </div>
 </div>
