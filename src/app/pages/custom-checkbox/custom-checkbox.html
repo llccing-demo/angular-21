@@ -1,0 +1,18 @@
+<div>
+    <div class="mt-10">
+        <!-- 
+            this is a bit strange, why don't write like this [(checked)]="agreedToTerms".
+            should be careful about the difference between property binding and two-way binding
+        -->
+        <app-checkbox [(checked)]="agreedToTerms" [label]="'Agree to Terms'"></app-checkbox>
+    </div>
+
+    <div class="mt-10">
+        <app-checkbox [(checked)]="enableNotifications" [label]="'Enable Notifications'"></app-checkbox>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-4 items-start">
+        <button (click)="toggleTermsFromParent()">Toggle Terms</button>
+        <button (click)="resetAll()">Reset All</button>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<label>
+    <!-- 
+        why don't use [(ngModel)] here?
+    -->
+    <input type="checkbox" [checked]="checked()" (change)="toggle()"/>
+    {{ label() }}
+</label>
