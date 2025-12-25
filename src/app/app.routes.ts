@@ -6,4 +6,5 @@ export const routes: Routes = [
     { path: 'users', loadComponent: () => import('./pages/users/users').then(m => m.Users) },
     { path: 'parents', loadComponent: () => import('./pages/parent/parent').then(m => m.Parent) },
     { path: 'checkbox', loadComponent: () => import('./pages/custom-checkbox/custom-checkbox').then(m => m.CustomCheckbox) },
+    { path: 'cart', loadComponent: () => import('./pages/cart-display/cart-display').then(m => m.CartDisplay) },
 ];

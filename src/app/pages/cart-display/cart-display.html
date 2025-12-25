@@ -1,0 +1,30 @@
+
+<div>
+    <h2>Add products</h2>
+
+    <button (click)="addLaptop()">Add Laptop ($1000)</button>
+    <button (click)="addMouse()">Add Mouse ($20)</button>
+    <button (click)="addKeyboard()">Add keyboard ($50)</button>
+</div>
+
+
+<div class="mt-4">
+    <h2>Cart</h2>
+
+    @for(prod of cartStore.cartItems() ; track prod.id) {
+        <div class="flex gap-4 items-center mb-2">
+            <span>{{prod.name}} - ${{prod.price}} - {{prod.quantity}}</span>
+            <button (click)="decreaseQuantity(prod.id)">-</button>
+            <button (click)="increaseQuantity(prod.id)">+</button>
+            <button (click)="cartStore.removeItem(prod.id)">Remove</button>
+        </div>
+    }
+</div>
+
+
+<div class="mt-4">
+    <h2>Total: ${{cartStore.totalPrice()}}</h2>
+    <h2>Total Quantity: {{cartStore.totalQuantity()}}</h2>
+
+    <button (click)="cartStore.clearCart()">clear</button>
+</div>
