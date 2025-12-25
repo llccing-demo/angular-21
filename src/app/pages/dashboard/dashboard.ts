@@ -1,10 +1,11 @@
-import { Component, computed, signal, linkedSignal } from '@angular/core';
+import { Component, computed, signal, linkedSignal, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   imports: [],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Dashboard {
   userStatus = signal<'Offline' | 'Online'>('Offline');

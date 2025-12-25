@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { Child } from "./child/child";
 
 @Component({
@@ -6,6 +6,7 @@ import { Child } from "./child/child";
   imports: [Child],
   templateUrl: './parent.html',
   styleUrl: './parent.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Parent {
   products = [

@@ -1,4 +1,4 @@
-import { Component, signal, resource, computed } from '@angular/core';
+import { Component, signal, resource, computed, ChangeDetectionStrategy } from '@angular/core';
 import { getUserApi } from './user-api';
 
 @Component({
@@ -6,6 +6,7 @@ import { getUserApi } from './user-api';
   imports: [],
   templateUrl: './users.html',
   styleUrl: './users.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Users {
   userId = signal(1);
