@@ -1,0 +1,24 @@
+<div>
+    <h1>Advanced Shopping Cart</h1>
+
+    <div class="mt-4">
+        <button (click)="showFirstProductDetails()">showFirstProductDetails</button>
+        <button (click)="initiateCheckout()">Initiate Checkout</button>
+    </div>
+
+    <div class="my-4">
+        <app-product-card [name]="'Laptop'" [price]="999" [description]="'High-performance laptop'" [available]="true"
+            [productId]="'LAP001'" [category]="'Electronics'"></app-product-card>
+    </div>
+
+    <div class="my-4">
+        <app-cart-summary [itemCount]="cartQuantity()" [total]="totalPrice()"></app-cart-summary>
+
+        <div>
+            <label>Quantity: </label>
+            <button (click)="updateQuantity(-1)" [disabled]="cartQuantity() <= 0">-</button>
+            <span>{{ cartQuantity() }}</span>
+            <button (click)="updateQuantity(1)" [disabled]="cartQuantity() >= 10">+</button>
+        </div>
+    </div>
+</div>
