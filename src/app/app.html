@@ -1,34 +1,33 @@
 <div class="p-4">
-    <h1>Welcome to the Angular 21 App!</h1>
+  <h1 appHightlight>Welcome to the Angular 21 App!</h1>
 
-    <ul class="flex gap-4">
-      <li>
-        <a routerLink="/">Home</a>
-      </li>
-      
-      <li>
-        <a routerLink="/dashboard">Dashboard</a>
-      </li>
+  <ul class="flex gap-4">
+    <li>
+      <a routerLink="/" appHightlight color="green" [intensity]="0.2">Home</a>
+    </li>
 
-      <li>
-        <a routerLink="/users">Users</a>
-      </li>
+    <li>
+      <a routerLink="/dashboard" appHightlight color="green" [intensity]="0.2">Dashboard</a>
+    </li>
 
-      <li>
-        <a routerLink="/parents">Parents</a>
-      </li>
+    <li>
+      <a routerLink="/users" appHightlight color="green" [intensity]="0.2">Users</a>
+    </li>
 
-      <li>
-        <a routerLink="/checkbox">Checkbox</a>
-      </li>
-      
-      <li>
-        <a routerLink="/cart">Cart</a>
-      </li>
-    </ul>
+    <li>
+      <a routerLink="/parents" appHightlight color="green" [intensity]="0.2">Parents</a>
+    </li>
+
+    <li>
+      <a routerLink="/checkbox" appHightlight color="green" [intensity]="0.2">Checkbox</a>
+    </li>
+
+    <li>
+      <a routerLink="/cart" appHightlight color="green" [intensity]="0.2">Cart</a>
+    </li>
+  </ul>
 </div>
 
 <div class="m-4 p-4 border-1">
-<router-outlet />
+  <router-outlet />
 </div>
-
